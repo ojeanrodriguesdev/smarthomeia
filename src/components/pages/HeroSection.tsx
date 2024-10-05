@@ -5,73 +5,72 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <div className="bg-gray-900">
-      <div className="relative isolate overflow-hidden pt-14">
-        <Image
-          src="/"
-          alt=""
-          quality={100}
-          loading="lazy"
-          priority={true}
-          width={100}
-          height={100}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+    <>
+      {/* Header com logo centralizada, agora com posição absoluta */}
+      <header className="absolute inset-x-0 top-0 flex justify-center items-center py-6 z-20">
+        <a href="#" className="block">
+          <Image
+            src="/images/Header/logo.png" // Substitua pelo caminho correto da sua imagem
+            alt="Logo"
+            width={24}
+            height={24}
+            quality={100}
+            loading="eager"
+            priority={true}
           />
-        </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-white">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-          <div className="text-center">
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Data to enrich your online business
+        </a>
+      </header>
+
+      {/* Hero Section */}
+      <div className="bg-black relative isolate overflow-hidden">
+        {/* Removido o pt-14 para eliminar o padding no topo */}
+
+        {/* Eclipse SVG com gradiente e blur */}
+        <svg
+          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70"
+          width="800"
+          height="600"
+          viewBox="0 0 800 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ filter: 'blur(220px)' }} // Aplica o blur de 220px
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
+              <stop offset="30%" style={{ stopColor: '#84EEF5', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+          <circle cx="400" cy="300" r="250" fill="url(#grad1)" />
+        </svg>
+
+        {/* Conteúdo da Hero */}
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-48 relative z-10">
+          {/* Título e Descrição */}
+          <div className="text-center m-6">
+            <h1 className="text-balance text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+              Transforme Sua Casa com o<br /> SmarthHome AI
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-              commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+            <p className="mt-4 sm:mt-6 text-sm sm:text-lg lg:text-xl leading-7 sm:leading-8 lg:leading-9 text-gray-300 font-semibold">
+              A solução definitiva para automatizar sua casa e melhorar sua qualidade de vida em
+              apenas 5 minutos.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+
+            {/* Botões */}
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                className="w-auto sm:w-auto rounded-full bg-green-buttonhero px-7 py-4 sm:px-7 sm:py-4 text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
-                Get started
+                Compre agora
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-white">
-                Learn more <span aria-hidden="true">→</span>
+              <a href="#" className="w-full sm:w-auto text-sm font-semibold leading-6 text-white">
+                Saiba mais <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          />
-        </div>
       </div>
-    </div>
+    </>
   )
 }
