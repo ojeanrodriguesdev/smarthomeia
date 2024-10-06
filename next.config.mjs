@@ -1,18 +1,8 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.optimization.splitChunks.cacheGroups = {
-        framework: {
-          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-          name: 'framework',
-          chunks: 'all',
-          priority: 40,
-          enforce: true,
-        },
-      }
-    }
-    return config
-  },
+  // outras configurações que você precisar
 }
+
+export default nextConfig
