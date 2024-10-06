@@ -16,6 +16,7 @@ const config: Config = {
           buttonhero: '#007943',
           feature: '#385650',
           star: '#1F724D',
+          featuretwo: '#1F724D33',
         },
         blue: {
           eclipse: '#84EEF5',

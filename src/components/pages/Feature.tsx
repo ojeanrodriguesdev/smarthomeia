@@ -3,30 +3,32 @@
 import React from 'react'
 import Image from 'next/image'
 
+// Definição das features a serem exibidas
 const features = [
   {
     name: 'Automação de Rotinas:',
     description:
       'Crie rotinas personalizadas que ligam ou desligam luzes, aparelhos e outros dispositivos automaticamente com base em horários ou detecção de presença.',
-    src: '/images/Feature/icone1.png',
+    src: '/images/Feature/icone1.png', // Certifique-se de que este caminho está correto
     size: 24,
   },
   {
     name: 'Controle Remoto Via Aplicativo:',
     description:
       'Gerencie todos os dispositivos da sua casa remotamente, ajustando iluminação, temperatura e segurança com um toque no aplicativo, de qualquer lugar.',
-    src: '/images/Feature/icone2.png',
+    src: '/images/Feature/icone2.png', // Certifique-se de que este caminho está correto
     size: 16,
   },
   {
     name: 'Comandos de Voz Integrados:',
     description:
       'Controle seus dispositivos usando comandos de voz com assistentes virtuais como Google Assistente e Alexa, tornando o gerenciamento da casa mais fácil e rápido.',
-    src: '/images/Feature/icone3.png',
+    src: '/images/Feature/icone3.png', // Certifique-se de que este caminho está correto
     size: 24,
   },
 ]
 
+// Componente Feature
 export default function Feature() {
   return (
     <div className="bg-green-feature rounded-t-[30px] mt-[-50px] relative z-30 overflow-hidden">
@@ -38,7 +40,7 @@ export default function Feature() {
               <h2 className="text-[22px] md:text-[39px] lg:text-[32px] xl:text-[34px] font-bold font-opensans tracking-tight text-white drop-shadow-lg text-center lg:text-start xl:px-0 overflow-hidden">
                 Gerenciar Sua Casa Está Se
                 <br /> Tornando um{' '}
-                <span className="font-bold" data-text="Desafio">
+                <span className="gradient-mask font-bold drop-shadow-2xl" data-text="Desafio">
                   Desafio
                 </span>
                 ?
@@ -51,7 +53,7 @@ export default function Feature() {
                 AI.
               </p>
 
-              <dl className="mt-10 space-y-1 text-base leading-1 text-white font-opensans font-medium drop-shadow-lg">
+              <dl className="mt-10 space-y-5 text-base leading-1 text-white font-opensans font-medium drop-shadow-lg">
                 {features.map(feature => (
                   <div key={feature.name} className="relative">
                     <dt className="flex items-center font-opensans font-bold text-white drop-shadow-lg">
@@ -74,23 +76,24 @@ export default function Feature() {
             </div>
 
             {/* Imagem do lado direito */}
-            <div className="relative flex items-end h-full w-full z-30 pt-10">
+            <div className="relative flex items-center lg:items-end h-full w-full z-30">
               <Image
-                src="/images/Feature/image.png"
+                src="/images/Feature/image.png" // Certifique-se de que este caminho está correto
                 alt="Smart Home AI"
                 width={627}
                 height={634}
                 quality={100}
                 loading="eager"
                 priority={true}
-                className="w-full h-auto ml-[22px] hidden sm:hidden md:hidden lg:block lg:ml-0 lg:w-[627px] lg:h-[634px] object-contain drop-shadow-2xl rounded-[100px]"
+                className="w-full h-auto lg:ml-0 lg:w-[627px] lg:h-[634px] object-contain drop-shadow-2xl"
               />
             </div>
           </div>
         </div>
+
         {/* Movendo o SVG para fora da div de conteúdo */}
         <svg
-          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden" // z-index negativo para estar embaixo de tudo
+          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden"
           width="800"
           height="600"
           viewBox="0 0 800 550"
