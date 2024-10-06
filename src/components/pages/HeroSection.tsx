@@ -7,13 +7,13 @@ export default function HeroSection() {
   return (
     <div className="min-h-screen bg-black flex flex-col justify-center relative overflow-hidden z-10"> {/* Alterado para z-10 */}
       {/* Header com logo centralizada */}
-      <header className="absolute inset-x-0 top-0 flex justify-center items-center py-6 z-20">
+      <header className="absolute inset-x-0 top-0 flex justify-center items-center py-6 pt-24 z-20">
         <a href="#" className="block">
           <Image 
             src="/images/Header/logo.png" 
             alt="Logo" 
-            width={24}
-            height={24}
+            width={55}
+            height={46}
             quality={100}
             priority={true}
             className='drop-shadow-lg'

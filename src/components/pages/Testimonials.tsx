@@ -82,10 +82,10 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Título e descrição */}
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-bold leading-8 tracking-tight text-green-testimonials font-opensans drop-shadow-md">
+          <h2 className="text-lg font-bold leading-8 tracking-tight text-green-testimonials font-opensans ">
             TESTIMONIALS
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl drop-shadow-md">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">
             Descubra Como o <span className="gradient-mask drop-shadow-md">SmartHome AI</span>
             <br /> Melhorou a Vida de Nossos Clientes
           </p>

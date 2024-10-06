@@ -1,25 +1,26 @@
-import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
+// Supondo que suas imagens estão nomeadas como 'economia.png', 'praticidade.png', 'integracao.png'
 const features = [
   {
     name: 'Economia de Tempo',
     description:
       'Agende tarefas diárias como apagar luzes ou ajustar a temperatura automaticamente.',
     href: '#',
-    icon: InboxIcon,
+    icon: '/images/FeatureTwo/icone1.png', // Caminho da imagem
   },
   {
     name: 'Praticidade Sem Toque',
     description:
       'Lista completa de dispositivos inteligentes, permitindo ligar, desligar ou ajustar configurações rapidamente.',
     href: '#',
-    icon: UsersIcon,
+    icon: '/images/FeatureTwo/icone2.png', // Caminho da imagem
   },
   {
     name: 'Integração Total',
     description: 'Funciona com Google Assistente, Amazon Alexa e outros sistemas.',
     href: '#',
-    icon: TrashIcon,
+    icon: '/images/FeatureTwo/icone3.png', // Caminho da imagem
   },
 ]
 
@@ -37,13 +38,22 @@ export default function FeatureTwo() {
             que trabalha por você.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none drop-shadow-xl">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 drop-shadow-xl">
             {features.map(feature => (
-              <div key={feature.name} className="flex flex-col bg-gradient-to-t from-green-100/40 to-green-100/40 py-6 px-7 rounded-[20px] shadow-2xl">
+              <div
+                key={feature.name}
+                className="flex flex-col bg-gradient-to-t from-white to-white py-6 px-7 rounded-[20px] drop-shadow-2xl"
+              >
                 <dt className="text-base leading-7 text-black font-bold font-opensans">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <feature.icon aria-hidden="true" className="h-6 w-6 text-white drop-shadow-2xl font-bold" />
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center">
+                    <Image
+                      width={48}
+                      height={48}
+                      src={feature.icon}
+                      alt={feature.name}
+                      className="drop-shadow-2xl"
+                    />
                   </div>
                   {feature.name}
                 </dt>
@@ -52,7 +62,7 @@ export default function FeatureTwo() {
                   <p className="mt-6">
                     <a
                       href={feature.href}
-                      className="text-sm font-semibold leading-6 text-indigo-600"
+                      className="text-sm font-semibold leading-6 text-green-testimonials"
                     >
                       Saiba mais <span aria-hidden="true">→</span>
                     </a>
