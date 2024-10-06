@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-mask {
+    position: relative;
+    color: transparent;
+  }
+  
+  .gradient-mask::before {
+    content: attr(data-text);
+    position: absolute;
+    background: linear-gradient(90deg, #75EBB6 0%, #1F724D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
