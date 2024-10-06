@@ -3,26 +3,30 @@
 import React from 'react'
 import Image from 'next/image'
 
+import icon1 from '../public/images/Feature/icon1.png';
+import icon2 from '../public/images/Feature/icon2.png';
+import icon3 from '../public/images/Feature/icon3.png';
+
 const features = [
   {
     name: 'Automação de Rotinas:',
     description:
       'Crie rotinas personalizadas que ligam ou desligam luzes, aparelhos e outros dispositivos automaticamente com base em horários ou detecção de presença.',
-    src: '/images/feature/icon1.png',
+    src: '/images/Feature/icone1.png',
     size: 24,
   },
   {
     name: 'Controle Remoto Via Aplicativo:',
     description:
       'Gerencie todos os dispositivos da sua casa remotamente, ajustando iluminação, temperatura e segurança com um toque no aplicativo, de qualquer lugar.',
-    src: '/images/feature/icon2.png',
+    src: '/images/Feature/icone2.png',
     size: 16,
   },
   {
     name: 'Comandos de Voz Integrados:',
     description:
       'Controle seus dispositivos usando comandos de voz com assistentes virtuais como Google Assistente e Alexa, tornando o gerenciamento da casa mais fácil e rápido.',
-    src: '/images/feature/icon3.png',
+    src: '/images/Feature/icone3.png',
     size: 24,
   },
 ]
