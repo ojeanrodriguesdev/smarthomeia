@@ -14,15 +14,18 @@ const config: Config = {
         green: {
           herosection: '#0035324D',
           buttonhero: '#007943',
-          firstfeature: '#385650',
+          feature: '#385650',
           star: '#1F724D',
         },
         blue: {
           eclipse: '#84EEF5',
-        }
+        },
       },
       boxShadow: {
         'blue-layer': '0px 0px 200px rgba(0, 150, 255, 0.5)',
+      },
+      fontFamily: {
+        opensans: 'Open Sans", sans-serif',
       }
     },
   },
