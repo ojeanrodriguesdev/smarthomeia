@@ -38,7 +38,7 @@ export default function Feature() {
               <h2 className="text-[22px] md:text-[39px] lg:text-[32px] xl:text-[34px] font-bold font-opensans tracking-tight text-white drop-shadow-lg text-center lg:text-start xl:px-0 overflow-hidden">
                 Gerenciar Sua Casa Está Se
                 <br /> Tornando um{' '}
-                <span className="gradient-mask font-bold" data-text="Desafio">
+                <span className="font-bold" data-text="Desafio">
                   Desafio
                 </span>
                 ?
