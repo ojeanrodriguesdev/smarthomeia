@@ -17,6 +17,8 @@ const config: Config = {
           feature: '#385650',
           star: '#1F724D',
           featuretwo: '#1F724D33',
+          testimonials: '#1F724D',
+          testimonialstwo: '#84DAB4',
         },
         blue: {
           eclipse: '#84EEF5',

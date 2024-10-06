@@ -28,7 +28,7 @@ export default function FeatureTwo() {
     <div className="bg-white py-10 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl ">
+          <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl drop-shadow-md">
             Rotinas personalizadas que trabalham por você
           </h2>
           <p className="mt-6 text-lg leading-1 text-black">
@@ -40,7 +40,7 @@ export default function FeatureTwo() {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map(feature => (
-              <div key={feature.name} className="flex flex-col bg-gradient-to-t from-green-featuretwo to-green-200 py-6 px-7 rounded-[20px] shadow-2xl">
+              <div key={feature.name} className="flex flex-col bg-gradient-to-t from-green-100/40 to-green-100/40 py-6 px-7 rounded-[20px] shadow-2xl">
                 <dt className="text-base leading-7 text-black font-bold font-opensans">
                   <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                     <feature.icon aria-hidden="true" className="h-6 w-6 text-white drop-shadow-2xl font-bold" />
