@@ -29,7 +29,7 @@ const features = [
 
 export default function Feature() {
   return (
-    <div className="bg-green-feature rounded-t-[30px] mt-[-50px] relative z-30">
+    <div className="bg-green-feature rounded-t-[30px] mt-[-50px] relative z-30 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="relative isolate overflow-hidden px-6 pt-20 sm:px-10 sm:py-24 md:pt-20 md:pb-0 lg:py-24 xl:px-24">
           <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:items-center overflow-hidden">
@@ -83,14 +83,14 @@ export default function Feature() {
                 quality={100}
                 loading="eager"
                 priority={true}
-                className="w-full h-auto ml-[22px] hidden sm:hidden md:hidden lg:block lg:ml-0 lg:w-[627px] lg:h-[634px] object-contain drop-shadow-2xl"
+                className="w-full h-auto ml-[22px] hidden sm:hidden md:hidden lg:block lg:ml-0 lg:w-[627px] lg:h-[634px] object-contain drop-shadow-2xl rounded-[100px]"
               />
             </div>
           </div>
         </div>
         {/* Movendo o SVG para fora da div de conteúdo */}
         <svg
-          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1]" // z-index negativo para estar embaixo de tudo
+          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden" // z-index negativo para estar embaixo de tudo
           width="800"
           height="600"
           viewBox="0 0 800 550"
