@@ -3,10 +3,6 @@
 import React from 'react'
 import Image from 'next/image'
 
-import icon1 from '../public/images/Feature/icon1.png';
-import icon2 from '../public/images/Feature/icon2.png';
-import icon3 from '../public/images/Feature/icon3.png';
-
 const features = [
   {
     name: 'Automação de Rotinas:',
