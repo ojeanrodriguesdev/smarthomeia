@@ -28,8 +28,9 @@ const config: Config = {
         'blue-layer': '0px 0px 200px rgba(0, 150, 255, 0.5)',
       },
       fontFamily: {
-        opensans: 'Open Sans", sans-serif',
-      }
+        opensans: '"Open Sans", sans-serif',
+        monstserrat: '"Montserrat", sans-serif',
+      },
     },
   },
   plugins: [],

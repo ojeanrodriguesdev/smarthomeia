@@ -46,7 +46,7 @@ export default function HeroSection() {
         <div className="max-w-2xl w-full mx-auto">
           <div className="text-center">
             <h1 className="text-balance text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
-              Transforme Sua Casa com o<br /> <span className="gradient-mask">SmarthHome AI</span>
+              Transforme Sua Casa com o<br /> <span className="gradient-mask font-extrabold">SmarthHome AI</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl lg:text-xl leading-relaxed text-gray-300 font-semibold max-w-xl mx-auto drop-shadow-lg">
               A solução definitiva para automatizar sua casa e melhorar sua qualidade de vida em

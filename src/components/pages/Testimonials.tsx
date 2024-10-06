@@ -86,7 +86,7 @@ export default function Testimonials() {
             TESTIMONIALS
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">
-            Descubra Como o <span className="gradient-mask drop-shadow-md">SmartHome AI</span>
+            Descubra Como o <span className="gradient-mask font-extrabold drop-shadow-md">SmartHome AI</span>
             <br /> Melhorou a Vida de Nossos Clientes
           </p>
         </div>
