@@ -12,8 +12,8 @@ export default function HeroSection() {
           <Image 
             src="/images/Header/logo.png" 
             alt="Logo" 
-            width={55}
-            height={46}
+            width={35}
+            height={26}
             quality={100}
             priority={true}
             className='drop-shadow-lg'
@@ -34,7 +34,7 @@ export default function HeroSection() {
       >
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
-            <stop offset="30%" style={{ stopColor: '#84EEF5', stopOpacity: 1 }} />
+            <stop offset="30%" style={{ stopColor: '#007943', stopOpacity: 1 }} />
             <stop offset="100%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }} />
           </linearGradient>
         </defs>

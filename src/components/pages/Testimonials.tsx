@@ -82,7 +82,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Título e descrição */}
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-bold leading-8 tracking-tight text-green-testimonials font-opensans ">
+          <h2 className="text-sm font-bold leading-8 tracking-tight text-green-testimonials font-opensans ">
             TESTIMONIALS
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">
