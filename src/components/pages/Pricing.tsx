@@ -145,7 +145,7 @@ export default function Pricing() {
                       quality={100}
                       priority={true}
                       loading="eager"
-                      className="z-30 mr-[30px]"
+                      className="z-30 lg:mr-[30px]"
                     />
                   </div>
                 </div>

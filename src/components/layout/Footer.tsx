@@ -53,8 +53,8 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-black font-bold">
-          &copy; Developed by DEVCORE ®
+        <p className="mt-10 text-center text-xs leading-5 text-black font-semibold">
+          Developed by DEVCORE &copy; 
         </p>
       </div>
     </footer>
