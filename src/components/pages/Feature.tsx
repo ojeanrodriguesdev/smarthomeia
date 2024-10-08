@@ -10,6 +10,7 @@ const features = [
     description:
       'Crie rotinas personalizadas que ligam ou desligam luzes, aparelhos e outros dispositivos automaticamente com base em horários ou detecção de presença.',
     src: '/images/Feature/icone1.svg', // Certifique-se de que este caminho está correto
+    src: '/images/Feature/icone1.vsg', // Certifique-se de que este caminho está correto
     size: 24,
   },
   {
@@ -17,6 +18,7 @@ const features = [
     description:
       'Gerencie todos os dispositivos da sua casa remotamente, ajustando iluminação, temperatura e segurança com um toque no aplicativo, de qualquer lugar.',
     src: '/images/Feature/icone2.svg', // Certifique-se de que este caminho está correto
+    src: '/images/Feature/icone2.vsg', // Certifique-se de que este caminho está correto
     size: 16,
   },
   {
@@ -24,6 +26,7 @@ const features = [
     description:
       'Controle seus dispositivos usando comandos de voz com assistentes virtuais como Google Assistente e Alexa, tornando o gerenciamento da casa mais fácil e rápido.',
     src: '/images/Feature/icone3.svg', // Certifique-se de que este caminho está correto
+    src: '/images/Feature/icone3.vsg', // Certifique-se de que este caminho está correto
     size: 24,
   },
 ]
@@ -79,6 +82,7 @@ export default function Feature() {
             <div className="relative flex items-center lg:items-end h-full w-full z-30">
               <Image
                 src="/images/Feature/image.svg" // Certifique-se de que este caminho está correto
+                src="/images/Feature/image.vsg" // Certifique-se de que este caminho está correto
                 alt="Smart Home AI"
                 width={627}
                 height={634}
