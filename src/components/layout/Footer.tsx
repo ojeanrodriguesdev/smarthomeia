@@ -9,11 +9,11 @@ const navigation = {
     { name: 'Privacidade', href: '#' },
   ],
   social: [
-    { name: 'Facebook', href: '#', icon: '/images/Footer/facebook.png' }, // Caminho para os ícones PNG
-    { name: 'Instagram', href: '#', icon: '/images/Footer/instagram.png' },
-    { name: 'Twitter', href: '#', icon: '/images/Footer/twitter.png' },
-    { name: 'GitHub', href: '#', icon: '/images/Footer/github.png' },
-    { name: 'YouTube', href: '#', icon: '/images/Footer/youtube.png' },
+    { name: 'Facebook', href: '#', icon: '/images/Footer/facebook.svg' }, // Caminho para os ícones PNG
+    { name: 'Instagram', href: '#', icon: '/images/Footer/instagram.svg' },
+    { name: 'Twitter', href: '#', icon: '/images/Footer/twitter.svg' },
+    { name: 'GitHub', href: '#', icon: '/images/Footer/github.svg' },
+    { name: 'YouTube', href: '#', icon: '/images/Footer/youtube.svg' },
   ],
 }
 
