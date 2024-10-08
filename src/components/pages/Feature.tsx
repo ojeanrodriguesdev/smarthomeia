@@ -78,7 +78,7 @@ export default function Feature() {
             {/* Imagem do lado direito */}
             <div className="relative flex items-center lg:items-end h-full w-full z-30">
               <Image
-                src="/images/Feature/image.svg" // Certifique-se de que este caminho está correto
+                src="/images/Feature/image.png" // Certifique-se de que este caminho está correto
                 alt="Smart Home AI"
                 width={627}
                 height={634}

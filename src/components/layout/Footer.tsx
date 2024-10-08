@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
       <div className="flex justify-center mb-20">
-        <Image src="/images/Footer/logo.vsg" alt="Logo da Empresa" width={48} height={57} />
+        <Image src="/images/Footer/logo.svg" alt="Logo da Empresa" width={48} height={57} />
       </div>
         <nav
           aria-label="Footer"
