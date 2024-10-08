@@ -10,7 +10,7 @@ export default function HeroSection() {
       <header className="absolute inset-x-0 top-0 flex justify-center items-center py-6 pt-24 z-20">
         <a href="#" className="block">
           <Image 
-            src="/images/Header/logo.png" 
+            src="/images/Footer/logo.svg" 
             alt="Logo" 
             width={35}
             height={26}

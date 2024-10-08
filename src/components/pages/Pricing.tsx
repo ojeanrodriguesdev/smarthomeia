@@ -138,7 +138,7 @@ export default function Pricing() {
                 <div className="flex w-full lg:w-auto items-center justify-center">
                   <div className="flex items-center justify-center">
                     <Image
-                      src="/images/Pricing/image.png"
+                      src="/images/Pricing/image.svg"
                       alt="Security"
                       width={41}
                       height={51}

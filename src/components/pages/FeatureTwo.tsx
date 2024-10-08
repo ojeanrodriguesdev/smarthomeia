@@ -7,20 +7,20 @@ const features = [
     description:
       'Agende tarefas diárias como apagar luzes ou ajustar a temperatura automaticamente.',
     href: '#',
-    icon: '/images/FeatureTwo/icone1.png',
+    icon: '/images/FeatureTwo/icon1.svg',
   },
   {
     name: 'Praticidade Sem Toque',
     description:
       'Lista completa de dispositivos inteligentes, permitindo ligar, desligar ou ajustar configurações rapidamente.',
     href: '#',
-    icon: '/images/FeatureTwo/icone2.png',
+    icon: '/images/FeatureTwo/icon2.svg',
   },
   {
     name: 'Integração Total',
     description: 'Funciona com Google Assistente, Amazon Alexa e outros sistemas.',
     href: '#',
-    icon: '/images/FeatureTwo/icone3.png',
+    icon: '/images/FeatureTwo/icon3.svg',
   },
 ]
 
