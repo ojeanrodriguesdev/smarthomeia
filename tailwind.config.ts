@@ -31,6 +31,8 @@ const config: Config = {
         opensans: ['"Open Sans"', 'sans-serif'],
         montserrat: ['"Montserrat"', 'sans-serif'],
       },
+      keyframes: {},
+      animation: {},
     },
   },
   plugins: [],
