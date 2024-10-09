@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, memo } from 'react'
+import React, { useRef, memo, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import useOnScreen from '@/components/hooks/useOnScreen'
@@ -28,9 +28,15 @@ const features = [
   },
 ]
 
-function FeatureTwo() {
+const FeatureTwo = () => {
   const ref = useRef<HTMLDivElement | null>(null)
   const isVisible = useOnScreen({ threshold: 0.5 })
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+    return () => setIsMounted(false)
+  }, [])
 
   return (
     <div className="bg-white py-10 sm:py-28 lg:py-32">
@@ -39,7 +45,7 @@ function FeatureTwo() {
           <motion.h2
             className="text-3xl font-bold tracking-tight text-black sm:text-4xl drop-shadow-md"
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 1, ease: 'easeOut' }}
           >
             Rotinas personalizadas que trabalham por você
@@ -47,7 +53,7 @@ function FeatureTwo() {
           <motion.p
             className="mt-6 text-lg leading-1 text-black"
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 1.25, ease: 'easeOut' }}
           >
             Transforme sua rotina com automação personalizada, simplificando tarefas diárias,
@@ -58,16 +64,16 @@ function FeatureTwo() {
         <motion.div
           className="flex items-center justify-center mt-10"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+          whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         >
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none drop-shadow-xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 drop-shadow-xl">
-              {features.map(feature => (
+              {features.map((feature) => (
                 <motion.div
                   key={feature.name}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                  whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 1.5 }}
                   className="flex flex-col bg-gradient-to-t from-white to-white py-6 px-7 rounded-[20px] drop-shadow-2xl"
                 >
@@ -103,7 +109,7 @@ function FeatureTwo() {
         <motion.div
           className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-6"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1 }}
         >
           <motion.a
