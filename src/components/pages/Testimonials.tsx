@@ -1,5 +1,7 @@
 'use client'
 
+import { motion } from 'framer-motion' // Certifique-se de importar o Framer Motion
+
 // Dados dos depoimentos
 const featuredTestimonial = {
   body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
@@ -62,21 +64,29 @@ export default function Testimonials() {
     <div className="relative isolate bg-white pb-32 pt-24 sm:pt-32 overflow-hidden">
       {/* Eclipse SVG com gradiente e blur */}
       <svg
-        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 z-0"
+        className="absolute left-1/2 top-[70%] transform -translate-x-1/2 -translate-y-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 z-0"
         width="800"
-        height="600"
+        height="700"
         viewBox="0 0 800 600"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ filter: 'blur(220px)' }}
+        style={{ filter: 'blur(230px)' }}
       >
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
             <stop offset="30%" style={{ stopColor: '#84EEF5', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: '#FFFFFF', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#84EEF5', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
-        <circle cx="400" cy="300" r="250" fill="url(#grad1)" />
+        <motion.ellipse
+          cx="400"
+          cy="300"
+          rx="250"
+          ry="200" // Ajuste para um valor que você deseja para o eixo Y
+          fill="url(#grad1)"
+          animate={{ scale: [1, 1.2, 1] }} // Animação de escala
+          transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }} // Transição da animação
+        />
       </svg>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -86,7 +96,8 @@ export default function Testimonials() {
             TESTIMONIALS
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">
-            Descubra Como o <span className="gradient-mask font-extrabold drop-shadow-md">SmartHome AI</span>
+            Descubra Como o{' '}
+            <span className="gradient-mask font-extrabold drop-shadow-md">SmartHome AI</span>
             <br /> Melhorou a Vida de Nossos Clientes
           </p>
         </div>
