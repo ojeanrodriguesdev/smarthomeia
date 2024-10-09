@@ -1,6 +1,7 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 
+// Definindo os pacotes de preços disponíveis
 const tiers = [
   {
     name: 'Pacote Empresarial',
@@ -31,6 +32,7 @@ const tiers = [
   },
 ]
 
+// Componente principal da seção de preços
 export default function Pricing() {
   return (
     <div className="isolate bg-gradient-to-b from-[#0F5B37] via-[#3BB87F] to-[#369C6D] z-0 overflow-hidden relative">
@@ -78,6 +80,7 @@ export default function Pricing() {
         <div className="-mt-80 z-20 relative">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 z-20">
             <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2 z-20">
+              {/* Mapeando os pacotes de preços para exibição */}
               {tiers.map(tier => (
                 <div
                   key={tier.id}
@@ -102,6 +105,7 @@ export default function Pricing() {
                       role="list"
                       className="mt-10 space-y-4 text-sm leading-6 text-black z-30 drop-shadow-md"
                     >
+                      {/* Listando as características do pacote */}
                       {tier.features.map(feature => (
                         <li key={feature} className="flex gap-x-3 z-30 drop-shadow-md">
                           <CheckIcon
@@ -124,6 +128,7 @@ export default function Pricing() {
                   </div>
                 </div>
               ))}
+              {/* Exibição de informações sobre pagamento único */}
               <div className="bg-white drop-shadow-2xl shadow-green-500 flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center z-30">
                 <div className="lg:min-w-0 lg:flex-1 z-30">
                   <h3 className="text-lg font-bold leading-8 tracking-tight text-green-buttonhero z-30 drop-shadow-md">

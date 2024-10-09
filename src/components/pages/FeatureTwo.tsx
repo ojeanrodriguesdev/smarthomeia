@@ -67,37 +67,21 @@ function FeatureTwo() {
           >
             Rotinas personalizadas que trabalham por você
           </motion.h2>
-          <motion.p
-            className="mt-6 text-lg leading-1 text-black"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: scrollY > 0.1 ? 1 : 0, y: scrollY > 0.1 ? 0 : 50 }}
-            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-          >
+          <p className="mt-6 text-lg leading-1 text-black">
             Transforme sua rotina com automação personalizada, simplificando tarefas diárias,
             ajustando luzes e temperatura ao seu comando, e vivendo com a tranquilidade de uma casa
             que trabalha por você.
-          </motion.p>
+          </p>
         </div>
         <div className="flex items-center justify-center mt-10">
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none drop-shadow-xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 drop-shadow-xl">
-              {features.map((feature, index) => (
+              {features.map(feature => (
                 <div
                   key={feature.name}
                   className="flex flex-col bg-gradient-to-t from-white to-white py-6 px-7 rounded-[20px] drop-shadow-2xl"
                 >
-                  <motion.dt
-                    className="text-base leading-7 text-black font-bold font-opensans"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{
-                      opacity: scrollY > 0.1 + index * 0.1 ? 1 : 0,
-                      y: scrollY > 0.1 + index * 0.1 ? 0 : 10,
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      ease: 'easeOut',
-                    }}
-                  >
+                  <dt className="text-base leading-7 text-black font-bold font-opensans">
                     <div className="mb-6 flex h-10 w-10 items-center justify-center">
                       <Image
                         width={48}
@@ -108,19 +92,8 @@ function FeatureTwo() {
                       />
                     </div>
                     {feature.name}
-                  </motion.dt>
-                  <motion.dd
-                    className="mt-1 flex flex-auto flex-col text-base leading-7 text-black"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{
-                      opacity: scrollY > 0.1 + index * 0.1 ? 1 : 0,
-                      y: scrollY > 0.1 + index * 0.1 ? 0 : 10,
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      ease: 'easeOut',
-                    }}
-                  >
+                  </dt>
+                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-black">
                     <p className="flex-auto">{feature.description}</p>
                     <p className="mt-6">
                       <a
@@ -130,7 +103,7 @@ function FeatureTwo() {
                         Saiba mais <span aria-hidden="true">→</span>
                       </a>
                     </p>
-                  </motion.dd>
+                  </dd>
                 </div>
               ))}
             </dl>
