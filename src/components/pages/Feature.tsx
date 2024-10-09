@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState, memo } from 'react'
+import React, { useRef, memo } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -30,86 +30,36 @@ const features = [
 ]
 
 function Feature() {
-  // Definindo o tipo do ref como HTMLDivElement ou null
   const ref = useRef<HTMLDivElement | null>(null)
-  const [scrollY, setScrollY] = useState(0)
-
-  // Função para lidar com o scroll
-  const handleScroll = () => {
-    if (ref.current) {
-      // Verifica se ref.current não é null
-      const { top, bottom } = ref.current.getBoundingClientRect() // Acessando getBoundingClientRect
-      const viewHeight = window.innerHeight
-
-      // Define a posição do scroll em relação à posição do componente
-      if (top < viewHeight && bottom > 0) {
-        const scrollPosition = Math.min(viewHeight, top + viewHeight) / viewHeight
-        setScrollY(scrollPosition)
-      } else {
-        setScrollY(0)
-      }
-    }
-  }
-
-  // Hook useEffect para adicionar e remover o listener de scroll
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
 
   // Retorno do componente
   return (
     <div className="bg-green-feature rounded-t-[15px] relative z-30 overflow-hidden">
       <div className="mx-auto max-w-7xl" ref={ref}>
-        {' '}
-        {/* Aplicando ref à div */}
         <div className="relative isolate overflow-hidden px-6 pt-20 sm:px-10 sm:py-24 md:pt-20 md:pb-0 lg:py-24 xl:px-24">
           <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:items-center overflow-hidden">
             {/* Conteúdo principal */}
             <div>
-              <motion.h2
-                className="text-[22px] md:text-[39px] lg:text-[32px] xl:text-[34px] font-bold font-opensans tracking-tight text-white drop-shadow-lg text-center lg:text-start xl:px-0 overflow-hidden"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: scrollY > 0.1 ? 1 : 0, y: scrollY > 0.1 ? 0 : 50 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-              >
+              <h2 className="text-[22px] md:text-[39px] lg:text-[32px] xl:text-[34px] font-bold font-opensans tracking-tight text-white drop-shadow-lg text-center lg:text-start xl:px-0 overflow-hidden">
                 Gerenciar Sua Casa Está Se
                 <br /> Tornando um{' '}
                 <span className="gradient-mask font-bold drop-shadow-2xl" data-text="Desafio">
                   Desafio
                 </span>
                 ?
-              </motion.h2>
-              <motion.p
-                className="mt-6 text-lg font-semibold font-opensans leading-1 text-white drop-shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: scrollY > 0.1 ? 1 : 0, y: scrollY > 0.1 ? 0 : 50 }}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-              >
+              </h2>
+              <p className="mt-6 text-lg font-semibold font-opensans leading-1 text-white drop-shadow-lg">
                 Você está enfrentando problemas para gerenciar seus dispositivos domésticos? Cansado
                 de controlar luzes, câmeras e aparelhos de forma manual? Você não está sozinho.
                 Milhares de pessoas como você ainda lidam com a dificuldade de gerenciar seus
                 dispositivos de maneira integrada e eficiente. É por isso que criamos o SmartHome
                 AI.
-              </motion.p>
+              </p>
 
               <dl className="mt-10 space-y-5 text-base leading-1 text-white font-opensans font-medium drop-shadow-lg">
-                {features.map((feature, index) => (
+                {features.map(feature => (
                   <div key={feature.name} className="relative">
-                    <motion.dt
-                      className="flex items-center font-opensans font-bold text-white drop-shadow-lg"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{
-                        opacity: scrollY > 0.1 + index * 0.1 ? 1 : 0,
-                        y: scrollY > 0.1 + index * 0.1 ? 0 : 10,
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                      }}
-                    >
+                    <dt className="flex items-center font-opensans font-bold text-white drop-shadow-lg">
                       <Image
                         src={feature.src}
                         alt={feature.name}
@@ -121,21 +71,8 @@ function Feature() {
                         priority={true}
                       />
                       {feature.name}
-                    </motion.dt>
-                    <motion.dd
-                      className="mt-2"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{
-                        opacity: scrollY > 0.1 + index * 0.1 ? 1 : 0,
-                        y: scrollY > 0.1 + index * 0.1 ? 0 : 10,
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                      }}
-                    >
-                      {feature.description}
-                    </motion.dd>
+                    </dt>
+                    <dd className="mt-2">{feature.description}</dd>
                   </div>
                 ))}
               </dl>
@@ -156,16 +93,17 @@ function Feature() {
             </div>
           </div>
         </div>
+
         {/* SVG do fundo */}
         <motion.svg
           className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden"
           width="800"
           height="600"
-          viewBox="0 0 800 550"
+          viewBox="0 0 500 550"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ filter: 'blur(120px)' }}
-          animate={{ scale: [1, 1.5, 1] }}
+          animate={{ scale: [1, 2, 1] }}
           transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
         >
           <defs>

@@ -36,7 +36,7 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <div className="relative bg-gradient-to-b from-[#0F5B38] via-[#3BB87F] to-[#369C6D] overflow-hidden rounded-t-[25px]">
+    <div className="relative mt-[-15px] bg-gradient-to-b from-[#0F5B38] via-[#3BB87F] to-[#369C6D] overflow-hidden rounded-t-[15px]">
       <div className="absolute inset-0 flex justify-center items-center z-0">
         {/* Eclipse SVG com preenchimento verde e blur */}
         <svg
