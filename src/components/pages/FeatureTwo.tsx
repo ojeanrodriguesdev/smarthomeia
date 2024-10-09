@@ -69,11 +69,13 @@ const FeatureTwo = () => {
         >
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none drop-shadow-xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3 drop-shadow-xl">
-              {features.map((feature) => (
+              {features.map(feature => (
                 <motion.div
                   key={feature.name}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  whileInView={
+                    isMounted && isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  }
                   transition={{ duration: 1.5 }}
                   className="flex flex-col bg-gradient-to-t from-white to-white py-6 px-7 rounded-[20px] drop-shadow-2xl"
                 >
