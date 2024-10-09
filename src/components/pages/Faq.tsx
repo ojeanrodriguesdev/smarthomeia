@@ -3,7 +3,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 import React, { useRef, memo } from 'react'
-import { motion } from 'framer-motion'
 import useOnScreen from '@/components/hooks/useOnScreen'
 
 const faqs = [
@@ -63,19 +62,13 @@ function Faq() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl divide-y divide-white/10">
-          <motion.h2
+          <h2
             className="text-2xl font-bold leading-10 tracking-tight text-white drop-shadow-md"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 1 }}
           >
             Perguntas Frequentes
-          </motion.h2>
-          <motion.dl
+          </h2>
+          <dl
             className="mt-10 space-y-6 divide-y divide-white/10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 1.5 }}
           >
             {faqs.map(faq => (
               <Disclosure key={faq.question} as="div" className="pt-6">
@@ -83,19 +76,13 @@ function Faq() {
                   <>
                     <dt>
                       <DisclosureButton className="group flex w-full items-start justify-between text-left text-white">
-                        <motion.span
+                        <span
                           className="text-base font-semibold leading-7"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-                          transition={{ duration: 1.75 }}
                         >
                           {faq.question}
-                        </motion.span>
-                        <motion.span
+                        </span>
+                        <span
                           className="ml-6 flex h-7 items-center"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-                          transition={{ duration: 2 }}
                         >
                           <PlusSmallIcon
                             aria-hidden="true"
@@ -109,25 +96,21 @@ function Faq() {
                               open ? 'block' : 'hidden'
                             }`}
                           />
-                        </motion.span>
+                        </span>
                       </DisclosureButton>
                     </dt>
-                    <DisclosurePanel as={motion.dd} className="mt-2 pr-12">
-                      <motion.p
+                    <DisclosurePanel className="mt-2 pr-12">
+                      <p
                         className="text-base leading-7 text-gray-300"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
-                        transition={{ duration: 0.5 }}
-                        animate={{ opacity: open ? 1 : 0, height: open ? 'auto' : 0 }}
                       >
                         {faq.answer}
-                      </motion.p>
+                      </p>
                     </DisclosurePanel>
                   </>
                 )}
               </Disclosure>
             ))}
-          </motion.dl>
+          </dl>
         </div>
       </div>
     </div>

@@ -118,20 +118,18 @@ const Feature = () => {
 
         {/* SVG do fundo */}
         <motion.svg
-          className="absolute left-[50%] top-32 md:top-20 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden"
+          className="absolute left-[70%] top-[800px] lg:top-32 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden"
           width="800"
           height="600"
           viewBox="0 0 500 550"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ filter: 'blur(120px)' }}
-          animate={{ scale: [1, 2, 1] }}
-          transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
         >
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: '#FF6B93', stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: '#FF9A44', stopOpacity: 1 }} />
+              <stop offset="0%" style={{ stopColor: '#007943', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#007943', stopOpacity: 1 }} />
             </linearGradient>
           </defs>
           <path
