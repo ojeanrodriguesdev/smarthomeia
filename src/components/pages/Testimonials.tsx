@@ -91,8 +91,6 @@ export default function Testimonials() {
           rx="250"
           ry="200"
           fill="url(#grad1)"
-          animate={{ scale: [1, 1.2, 1] }} 
-          transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
         />
       </svg>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

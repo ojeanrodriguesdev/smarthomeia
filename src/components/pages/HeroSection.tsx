@@ -48,8 +48,6 @@ const HeroSection: React.FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ filter: 'blur(230px)' }}
-          animate={{ scale: [1, 1.5, 1] }}
-          transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
         >
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">

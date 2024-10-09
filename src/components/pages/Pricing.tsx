@@ -56,8 +56,6 @@ export default function Pricing() {
         viewBox="400 200 1208 1755"
         className="absolute inset-0 m-auto h-[64rem] [mask-image:radial-gradient(closest-side,white,transparent)] z-0"
         style={{ filter: 'blur(230px)' }}
-        animate={{ scale: [1, 1.5, 1] }}
-        transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
       >
         <ellipse
           cx={604}
