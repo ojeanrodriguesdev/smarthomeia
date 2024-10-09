@@ -1,6 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef, memo } from 'react'
+import { motion } from 'framer-motion'
+import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
 
 const navigation = {
   main: [
@@ -9,7 +12,7 @@ const navigation = {
     { name: 'Privacidade', href: '#' },
   ],
   social: [
-    { name: 'Facebook', href: '#', icon: '/images/Footer/facebook.svg' }, // Caminho para os ícones PNG
+    { name: 'Facebook', href: '#', icon: '/images/Footer/facebook.svg' },
     { name: 'Instagram', href: '#', icon: '/images/Footer/instagram.svg' },
     { name: 'Twitter', href: '#', icon: '/images/Footer/twitter.svg' },
     { name: 'GitHub', href: '#', icon: '/images/Footer/github.svg' },
@@ -17,46 +20,81 @@ const navigation = {
   ],
 }
 
-export default function Footer() {
+function Footer() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para visibilidade
+
   return (
-    <footer className="bg-white">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-      <div className="flex justify-center mb-20">
-        <Image src="/images/Footer/logo.svg" alt="Logo da Empresa" width={48} height={57} />
-      </div>
+    <footer ref={ref} className="bg-white">
+      <motion.div
+        className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+        transition={{ duration: 1 }}
+      >
+        <div className="flex justify-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+            transition={{ duration: 1.5 }}
+          >
+            <Image src="/images/Footer/logo.svg" alt="Logo da Empresa" width={48} height={57} />
+          </motion.div>
+        </div>
         <nav
           aria-label="Footer"
           className="-mb-6 md:columns-2 sm:flex sm:justify-center sm:space-x-12"
         >
           {navigation.main.map(item => (
-            <div key={item.name} className="pb-6 flex flex-col items-center justify-center  md:block">
+            <motion.div
+              key={item.name}
+              className="pb-6 flex flex-col items-center justify-center md:block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+              transition={{ duration: 1.75 }}
+            >
               <a
                 href={item.href}
-                className="text-sm  text-black hover:text-gray-600 transform duration-300"
+                className="text-sm text-black hover:text-gray-600 transform duration-300"
               >
                 {item.name}
               </a>
-            </div>
+            </motion.div>
           ))}
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map(item => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+            <motion.a
+              key={item.name}
+              href={item.href}
+              className="text-gray-400 hover:text-gray-500"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+              transition={{ duration: 2 }}
+            >
               <span className="sr-only">{item.name}</span>
               <Image
                 src={item.icon}
                 alt={`${item.name} icon`}
-                width={20} // Defina a largura
-                height={20} // Defina a altura
+                width={20}
+                height={20}
                 className=""
               />
-            </a>
+            </motion.a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-black font-semibold">
-          Developed by DEVCORE &copy; 
-        </p>
-      </div>
+        <motion.p
+          className="mt-10 text-center text-xs leading-5 text-black font-semibold"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+          transition={{ duration: 2.5 }}
+        >
+          Developed by DEVCORE &copy;
+        </motion.p>
+      </motion.div>
     </footer>
   )
 }
+
+// Aplicando memo para otimizar a performance
+export default memo(Footer)

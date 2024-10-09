@@ -2,7 +2,9 @@
 
 import { CheckIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
-import { motion } from 'framer-motion' // Importando o motion do framer-motion
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
 
 // Definindo os pacotes de preços disponíveis
 const tiers = [
@@ -37,6 +39,9 @@ const tiers = [
 
 // Componente principal da seção de preços
 export default function Pricing() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para verificar visibilidade
+
   return (
     <div className="isolate bg-gradient-to-b from-[#0F5B37] via-[#3BB87F] to-[#369C6D] z-0 overflow-hidden relative">
       {/* SVG animado que ficará por trás dos cards de preço */}
@@ -65,19 +70,36 @@ export default function Pricing() {
       {/* Conteúdo da seção "Planos" */}
       <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8 z-20 relative">
         <div className="mx-auto max-w-4xl z-20">
-          <h2 className="text-base font-semibold leading-7 text-white z-20">Planos</h2>
-          <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl z-20">
+          <motion.h2
+            className="text-base font-semibold leading-7 text-white z-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+          >
+            Planos
+          </motion.h2>
+          <motion.p
+            className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl z-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 1.25, ease: 'easeOut' }}
+          >
             Planos Flexíveis para Sua Casa{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#38c754] to-[#00f451ba] font-extrabold drop-shadow-2xl">
               Inteligente
             </span>
-          </p>
+          </motion.p>
         </div>
         <div className="relative mt-6 z-20">
-          <p className="mx-auto max-w-2xl font-semibold text-lg leading-8 text-white/60 z-20">
+          <motion.p
+            className="mx-auto max-w-2xl font-semibold text-lg leading-8 text-white/60 z-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          >
             Transforme Sua Casa com Soluções Flexíveis e Personalizadas: Escolha o Pacote Ideal para
             Suas Necessidades.
-          </p>
+          </motion.p>
         </div>
       </div>
 
@@ -88,8 +110,12 @@ export default function Pricing() {
             <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2 z-20">
               {/* Mapeando os pacotes de preços para exibição */}
               {tiers.map(tier => (
-                <div
+                <motion.div
                   key={tier.id}
+                  ref={ref}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                  transition={{ duration: 1.5 }}
                   className="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10 z-30"
                 >
                   <div>
@@ -132,10 +158,15 @@ export default function Pricing() {
                       Comprar agora
                     </a>
                   </div>
-                </div>
+                </motion.div>
               ))}
               {/* Exibição de informações sobre pagamento único */}
-              <div className="bg-white drop-shadow-2xl shadow-green-500 flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center z-30">
+              <motion.div
+                className="bg-white drop-shadow-2xl shadow-green-500 flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center z-30"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 1.75 }}
+              >
                 <div className="lg:min-w-0 lg:flex-1 z-30">
                   <h3 className="text-lg font-bold leading-8 tracking-tight text-green-buttonhero z-30 drop-shadow-md">
                     Pagamento Único
@@ -156,11 +187,11 @@ export default function Pricing() {
                       quality={100}
                       priority={true}
                       loading="eager"
-                      className="z-30 lg:mr-[30px]"
+                      className="lg:-mt-12 z-20"
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
