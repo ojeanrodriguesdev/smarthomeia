@@ -57,6 +57,20 @@ const testimonials = [
       handle: 'cliente2',
     },
   },
+  {
+    body: 'Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.',
+    author: {
+      name: 'Cliente 2',
+      handle: 'cliente2',
+    },
+  },
+  {
+    body: 'Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.',
+    author: {
+      name: 'Cliente 2',
+      handle: 'cliente2',
+    },
+  },
 ]
 
 export default function Testimonials() {
@@ -117,25 +131,6 @@ export default function Testimonials() {
 
         {/* Grid de depoimentos */}
         <div className="mx-auto mt-16 grid grid-cols-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:max-w-none drop-shadow-xl">
-          {/* Depoimento em destaque */}
-          <motion.figure
-            ref={ref}
-            className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1 drop-shadow-xl flex flex-col"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            transition={{ duration: 1.5 }}
-          >
-            <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8 flex-1">
-              <p>{`“${featuredTestimonial.body}”`}</p>
-            </blockquote>
-            <figcaption className="flex flex-col items-center gap-x-4 gap-y-2 border-t border-gray-900/10 px-6 py-4 drop-shadow-xl">
-              <div className="flex-auto text-center">
-                <div className="font-semibold">{featuredTestimonial.author.name}</div>
-                <div className="text-gray-600">@{featuredTestimonial.author.handle}</div>
-              </div>
-            </figcaption>
-          </motion.figure>
-
           {/* Mapeando os depoimentos */}
           {testimonials.map((testimonial, index) => (
             <motion.figure
