@@ -1,5 +1,8 @@
+'use client'
+
 import { CheckIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import { motion } from 'framer-motion' // Importando o motion do framer-motion
 
 // Definindo os pacotes de preços disponíveis
 const tiers = [
@@ -36,10 +39,13 @@ const tiers = [
 export default function Pricing() {
   return (
     <div className="isolate bg-gradient-to-b from-[#0F5B37] via-[#3BB87F] to-[#369C6D] z-0 overflow-hidden relative">
-      {/* SVG que ficará por trás dos cards de preço */}
-      <svg
-        viewBox="0 0 1208 1024"
-        className="absolute left-1/2 transform -translate-x-1/2 lg:top-0 top-[400px] h-[64rem] [mask-image:radial-gradient(closest-side,white,transparent)] z-0"
+      {/* SVG animado que ficará por trás dos cards de preço */}
+      <motion.svg
+        viewBox="400 200 1208 1755"
+        className="absolute inset-0 m-auto h-[64rem] [mask-image:radial-gradient(closest-side,white,transparent)] z-0"
+        style={{ filter: 'blur(230px)' }}
+        animate={{ scale: [1, 1.5, 1] }} // Animação de escala
+        transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }} // Transição da animação
       >
         <ellipse
           cx={604}
@@ -50,11 +56,11 @@ export default function Pricing() {
         />
         <defs>
           <radialGradient id="6d1bd035-0dd1-437e-93fa-59d316231eb0">
-            <stop stopColor="#75EBB6" />
-            <stop offset={1} stopColor="#75EBB6" />
+            <stop stopColor="#76EBB6" />
+            <stop offset={1} stopColor="#76EBB6" />
           </radialGradient>
         </defs>
-      </svg>
+      </motion.svg>
 
       {/* Conteúdo da seção "Planos" */}
       <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8 z-20 relative">
