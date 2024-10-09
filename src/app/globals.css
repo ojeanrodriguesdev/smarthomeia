@@ -8,3 +8,7 @@
   background-clip: text;
   color: transparent;
 }
+
+.gradient-bg {
+  background: radial-gradient(circle, #17712a 0%, #274c2ff4 45%, #000000 100%);
+}

@@ -50,28 +50,7 @@ export default function Pricing() {
   }, [])
 
   return (
-    <div className="isolate bg-gradient-to-b from-[#0F5B37] via-[#3BB87F] to-[#369C6D] z-0 overflow-hidden relative">
-      {/* SVG animado que ficará por trás dos cards de preço */}
-      <motion.svg
-        viewBox="400 200 1208 1755"
-        className="absolute inset-0 m-auto h-[64rem] [mask-image:radial-gradient(closest-side,white,transparent)] z-0"
-        style={{ filter: 'blur(230px)' }}
-      >
-        <ellipse
-          cx={604}
-          cy={512}
-          rx={1004}
-          ry={1012}
-          fill="url(#6d1bd035-0dd1-437e-93fa-59d316231eb0)"
-        />
-        <defs>
-          <radialGradient id="6d1bd035-0dd1-437e-93fa-59d316231eb0">
-            <stop stopColor="#76EBB6" />
-            <stop offset={1} stopColor="#76EBB6" />
-          </radialGradient>
-        </defs>
-      </motion.svg>
-
+    <div className="isolate bg-gradient-to-b from-[#0d3d1e] via-[#157e3a] to-[#0d3d1e] z-0 overflow-hidden relative">
       {/* Conteúdo da seção "Planos" */}
       <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8 z-20 relative">
         <div className="mx-auto max-w-4xl z-20">
@@ -90,7 +69,7 @@ export default function Pricing() {
             transition={{ duration: 1.25, ease: 'easeOut' }}
           >
             Planos Flexíveis para Sua Casa{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#38c754] to-[#00f451ba] font-extrabold drop-shadow-2xl">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#39ff61] to-[#6aff9c] font-extrabold drop-shadow-2xl">
               Inteligente
             </span>
           </motion.p>

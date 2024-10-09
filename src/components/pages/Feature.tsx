@@ -34,7 +34,7 @@ const Feature = () => {
   const [isVisible] = useOnScreen({ threshold: 0.5 })
 
   return (
-    <div className="bg-green-feature rounded-t-[15px] relative z-30 overflow-hidden">
+    <div className="bg-gradient-to-b from-[#0d3d1e] via-[#157e3a] to-[#0d3d1e] rounded-t-[15px] relative z-30 overflow-hidden">
       <div className="mx-auto max-w-7xl" ref={ref}>
         <div className="relative isolate overflow-hidden px-6 pt-20 sm:px-10 sm:py-24 md:pt-20 md:pb-0 lg:py-24 xl:px-24">
           <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:items-center overflow-hidden">
@@ -48,7 +48,10 @@ const Feature = () => {
               >
                 Gerenciar Sua Casa Está Se
                 <br /> Tornando um{' '}
-                <span className="gradient-mask font-bold drop-shadow-2xl" data-text="Desafio">
+                <span
+                  className="bg-clip-text text-transparent bg-gradient-to-r from-[#39ff61] to-[#6aff9c] font-extrabolddrop-shadow-2xl"
+                  data-text="Desafio"
+                >
                   Desafio
                 </span>
                 ?
@@ -117,26 +120,6 @@ const Feature = () => {
         </div>
 
         {/* SVG do fundo */}
-        <motion.svg
-          className="absolute left-[70%] top-[800px] lg:top-32 transform -translate-x-1/2 scale-100 sm:scale-110 lg:scale-125 opacity-70 drop-shadow-lg z-[-1] overflow-hidden"
-          width="800"
-          height="600"
-          viewBox="0 0 500 550"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ filter: 'blur(120px)' }}
-        >
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: '#007943', stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: '#007943', stopOpacity: 1 }} />
-            </linearGradient>
-          </defs>
-          <path
-            d="M120 0C130.5 80 145 160 200 220C250 270 300 270 360 240C420 210 480 150 520 170C560 190 540 250 540 290C540 330 520 400 460 440C400 480 350 460 320 460C290 460 280 510 200 540C120 570 60 560 0 540C-60 520 -80 480 -90 460C-100 440 -90 420 -90 380C-90 340 -80 300 -70 270C-60 240 -50 230 -50 220C-50 210 -40 200 -30 180C-20 160 -10 130 0 100C10 70 20 30 120 0Z"
-            fill="url(#grad1)"
-          />
-        </motion.svg>
       </div>
     </div>
   )
