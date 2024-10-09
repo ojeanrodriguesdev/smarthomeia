@@ -3,8 +3,6 @@
 import localFont from 'next/font/local'
 import '../app/globals.css'
 
-import useSmoothScroll from '@/components/hooks/useSmoothScroll'
-
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -21,7 +19,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  useSmoothScroll()
 
   return (
     <html lang="en">

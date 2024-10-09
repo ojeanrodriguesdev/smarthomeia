@@ -1,28 +1,27 @@
-// hooks/useOnScreen.ts
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, RefObject } from 'react'
 
-const useOnScreen = (options: IntersectionObserverInit) => {
+const useOnScreen = (options: IntersectionObserverInit): [RefObject<HTMLElement>, boolean] => {
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLElement | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
+  const observer = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true)
-        observer.disconnect()
-      }
+    observer.current = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting)
     }, options)
 
     const currentRef = ref.current
 
     if (currentRef) {
-      observer.observe(currentRef)
+      observer.current.observe(currentRef)
     }
 
     return () => {
-      if (currentRef) observer.unobserve(currentRef) 
+      if (currentRef) {
+        observer.current?.unobserve(currentRef)
+      }
     }
-  }, [ref, options])
+  }, [options])
 
   return [ref, isVisible]
 }

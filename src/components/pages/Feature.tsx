@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import useOnScreen from '@/components/hooks/useOnScreen'
 
-
 const features = [
   {
     name: 'Automação de Rotinas:',
@@ -30,9 +29,9 @@ const features = [
   },
 ]
 
-function Feature() {
+const Feature = () => {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 })
+  const [isVisible] = useOnScreen({ threshold: 0.5 })
 
   return (
     <div className="bg-green-feature rounded-t-[15px] relative z-30 overflow-hidden">
@@ -44,7 +43,7 @@ function Feature() {
               <motion.h2
                 className="text-[22px] md:text-[39px] lg:text-[32px] xl:text-[34px] font-bold font-opensans tracking-tight text-white drop-shadow-lg text-center lg:text-start xl:px-0 overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} 
+                whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 0.75 }}
               >
                 Gerenciar Sua Casa Está Se
@@ -57,7 +56,7 @@ function Feature() {
               <motion.p
                 className="mt-6 text-lg font-semibold font-opensans leading-1 text-white drop-shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} 
+                whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 1 }}
               >
                 Você está enfrentando problemas para gerenciar seus dispositivos domésticos? Cansado
@@ -96,7 +95,7 @@ function Feature() {
               </dl>
             </div>
 
-            {/* Imagem do lado direito - sem animação */}
+            {/* Imagem do lado direito */}
             <motion.div
               className="relative flex items-center lg:items-end h-full w-full z-30"
               initial={{ opacity: 0, y: 20 }}
