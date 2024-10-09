@@ -15,6 +15,7 @@ const config: Config = {
           herosection: '#0035324D',
           buttonhero: '#007943',
           feature: '#385650',
+          featurebg: '#004D2B',
           star: '#1F724D',
           featuretwo: '#1F724D33',
           testimonials: '#1F724D',

@@ -85,13 +85,7 @@ export default function Testimonials() {
             <stop offset="100%" style={{ stopColor: '#84EEF5', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
-        <motion.ellipse
-          cx="400"
-          cy="300"
-          rx="250"
-          ry="200"
-          fill="url(#grad1)"
-        />
+        <motion.ellipse cx="400" cy="300" rx="250" ry="200" fill="url(#grad1)" />
       </svg>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Título e descrição */}
@@ -111,7 +105,9 @@ export default function Testimonials() {
             transition={{ duration: 1.25, ease: 'easeOut' }}
           >
             Descubra Como o{' '}
-            <span className="gradient-mask font-extrabold drop-shadow-md">SmartHome AI</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#14cb38] to-[#1ce760] font-extrabold drop-shadow-2xl">
+              SmartHome AI
+            </span>
             <br /> Melhorou a Vida de Nossos Clientes
           </motion.p>
         </div>

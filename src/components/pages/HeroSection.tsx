@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="min-h-screen bg-black flex flex-col justify-center relative overflow-hidden z-10"
+      className="min-h-screen gradient-bg flex flex-col justify-center relative overflow-hidden z-10"
     >
       <header className="absolute inset-x-0 top-0 flex justify-center items-center py-6 pt-24 z-20">
         <a href="#" className="block">
@@ -39,39 +39,20 @@ const HeroSection: React.FC = () => {
         </a>
       </header>
 
-      {isMounted && ( // Garante que as animações só sejam renderizadas se o componente estiver montado
-        <motion.svg
-          className="absolute inset-0 m-auto opacity-70 z-0"
-          width="800"
-          height="600"
-          viewBox="0 0 800 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ filter: 'blur(230px)' }}
-        >
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
-              <stop offset="30%" style={{ stopColor: '#007923', stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: '#007923', stopOpacity: 1 }} />
-            </linearGradient>
-          </defs>
-          <circle cx="400" cy="300" r="250" fill="url(#grad1)" />
-        </motion.svg>
-      )}
-
       {/* Conteúdo da Hero */}
       <div className="relative z-20 flex-grow flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
         {isMounted && (
           <motion.div
             className="max-w-2xl w-full mx-auto"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
           >
             <div className="text-center">
               <h1 className="text-balance text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
                 Transforme Sua Casa com o<br />
-                <span className="gradient-mask font-extrabold">SmarthHome AI</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#39ff61] to-[#6aff9c] font-extrabold drop-shadow-2xl">
+                  SmarthHome AI
+                </span>
               </h1>
               <p className="mt-6 text-lg sm:text-xl lg:text-xl leading-relaxed text-gray-300 font-semibold max-w-xl mx-auto drop-shadow-lg">
                 A solução definitiva para automatizar sua casa e melhorar sua qualidade de vida em
