@@ -4,9 +4,8 @@ import { CheckIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
+import useOnScreen from '@/components/hooks/useOnScreen' 
 
-// Definindo os pacotes de preços disponíveis
 const tiers = [
   {
     name: 'Pacote Empresarial',
@@ -36,11 +35,9 @@ const tiers = [
     ],
   },
 ]
-
-// Componente principal da seção de preços
 export default function Pricing() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para verificar visibilidade
+  const isVisible = useOnScreen({ threshold: 0.5 })
 
   return (
     <div className="isolate bg-gradient-to-b from-[#0F5B37] via-[#3BB87F] to-[#369C6D] z-0 overflow-hidden relative">
@@ -49,8 +46,8 @@ export default function Pricing() {
         viewBox="400 200 1208 1755"
         className="absolute inset-0 m-auto h-[64rem] [mask-image:radial-gradient(closest-side,white,transparent)] z-0"
         style={{ filter: 'blur(230px)' }}
-        animate={{ scale: [1, 1.5, 1] }} // Animação de escala
-        transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }} // Transição da animação
+        animate={{ scale: [1, 1.5, 1] }}
+        transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
       >
         <ellipse
           cx={604}

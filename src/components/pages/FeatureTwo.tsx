@@ -3,9 +3,8 @@
 import React, { useRef, memo } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
+import useOnScreen from '@/components/hooks/useOnScreen'
 
-// Definição do array de recursos
 const features = [
   {
     name: 'Economia de Tempo',
@@ -31,7 +30,7 @@ const features = [
 
 function FeatureTwo() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para verificar visibilidade
+  const isVisible = useOnScreen({ threshold: 0.5 })
 
   return (
     <div className="bg-white py-10 sm:py-28 lg:py-32">
@@ -121,5 +120,4 @@ function FeatureTwo() {
   )
 }
 
-// Aplicando memo para otimizar a performance
 export default memo(FeatureTwo)

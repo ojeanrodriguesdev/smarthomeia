@@ -1,4 +1,3 @@
-// HeroSection.tsx
 'use client'
 
 import Image from 'next/image'
@@ -8,7 +7,7 @@ import useOnScreen from '@/components/hooks/useOnScreen'
 
 const HeroSection: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible] = useOnScreen({ threshold: 0.5 }) // Aqui estamos usando o hook corretamente
+  const [isVisible] = useOnScreen({ threshold: 0.5 })
 
   return (
     <div
@@ -54,7 +53,7 @@ const HeroSection: React.FC = () => {
         <motion.div
           className="max-w-2xl w-full mx-auto"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }} // Verificação correta da visibilidade
+          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
           transition={{ duration: 1, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.5 }}
         >
