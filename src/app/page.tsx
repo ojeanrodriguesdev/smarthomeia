@@ -8,7 +8,7 @@ import Testimonials from '@/components/pages/Testimonials'
 
 export default function Home() {
   return (
-    <main>
+    <main className='bg-black'>
       <HeroSection />
       <Feature />
       <FeatureTwo />
