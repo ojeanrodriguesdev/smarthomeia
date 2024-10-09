@@ -9,22 +9,22 @@ const useOnScreen = (options: IntersectionObserverInit) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true)
-        observer.disconnect() // Para parar a observação após a visibilidade
+        observer.disconnect()
       }
     }, options)
 
-    const currentRef = ref.current // Armazena ref.current em uma variável
+    const currentRef = ref.current
 
     if (currentRef) {
       observer.observe(currentRef)
     }
 
     return () => {
-      if (currentRef) observer.unobserve(currentRef) // Usa a variável armazenada
+      if (currentRef) observer.unobserve(currentRef) 
     }
   }, [ref, options])
 
-  return [ref, isVisible] // Retornando ref e isVisible
+  return [ref, isVisible]
 }
 
 export default useOnScreen

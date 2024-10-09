@@ -1,4 +1,3 @@
-// HeroSection.tsx
 'use client'
 
 import Image from 'next/image'
@@ -8,7 +7,7 @@ import useOnScreen from '@/components/hooks/useOnScreen'
 
 const HeroSection: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible] = useOnScreen({ threshold: 0.5 }) // Aqui estamos usando o hook corretamente
+  const [isVisible] = useOnScreen({ threshold: 0.5 })
 
   return (
     <div
@@ -54,7 +53,7 @@ const HeroSection: React.FC = () => {
         <motion.div
           className="max-w-2xl w-full mx-auto"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }} // Verificação correta da visibilidade
+          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
           transition={{ duration: 1, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.5 }}
         >
@@ -72,7 +71,7 @@ const HeroSection: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
               <motion.a
                 href="#"
-                className="w-auto sm:w-auto rounded-full bg-green-buttonhero px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 shadow-xl"
+                className="w-auto sm:w-auto rounded-[10px] bg-green-buttonhero px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >

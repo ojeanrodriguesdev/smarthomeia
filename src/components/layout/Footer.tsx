@@ -3,8 +3,7 @@
 import Image from 'next/image'
 import { useRef, memo } from 'react'
 import { motion } from 'framer-motion'
-import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
-
+import useOnScreen from '@/components/hooks/useOnScreen'
 const navigation = {
   main: [
     { name: 'Sobre', href: '#' },
@@ -22,20 +21,20 @@ const navigation = {
 
 function Footer() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para visibilidade
+  const isVisible = useOnScreen({ threshold: 0.5 })
 
   return (
     <footer ref={ref} className="bg-white">
       <motion.div
         className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+        whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
         transition={{ duration: 1 }}
       >
         <div className="flex justify-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 1.5 }}
           >
             <Image src="/images/Footer/logo.svg" alt="Logo da Empresa" width={48} height={57} />
@@ -50,7 +49,7 @@ function Footer() {
               key={item.name}
               className="pb-6 flex flex-col items-center justify-center md:block"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} 
               transition={{ duration: 1.75 }}
             >
               <a
@@ -69,7 +68,7 @@ function Footer() {
               href={item.href}
               className="text-gray-400 hover:text-gray-500"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 2 }}
             >
               <span className="sr-only">{item.name}</span>
@@ -86,7 +85,7 @@ function Footer() {
         <motion.p
           className="mt-10 text-center text-xs leading-5 text-black font-semibold"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animação de entrada e saída
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 2.5 }}
         >
           Developed by DEVCORE &copy;
@@ -96,5 +95,4 @@ function Footer() {
   )
 }
 
-// Aplicando memo para otimizar a performance
 export default memo(Footer)

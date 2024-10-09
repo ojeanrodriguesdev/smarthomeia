@@ -41,13 +41,12 @@ const faqs = [
 
 function Faq() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para visibilidade
-
+  const isVisible = useOnScreen({ threshold: 0.5 })
   return (
     <div
-      ref={ref} // Aqui você pode usar o ref se precisar de manipulação do DOM
+      ref={ref}
       className={`relative mt-[-15px] bg-gradient-to-b from-[#0F5B38] via-[#3BB87F] to-[#369C6D] overflow-hidden rounded-t-[15px] ${
-        isVisible ? 'opacity-100' : 'opacity-50' // Exemplo de uso de isVisible
+        isVisible ? 'opacity-100' : 'opacity-50'
       }`}
     >
       <div className="absolute inset-0 flex justify-center items-center z-0">
@@ -67,7 +66,7 @@ function Faq() {
           <motion.h2
             className="text-2xl font-bold leading-10 tracking-tight text-white drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 1 }}
           >
             Perguntas Frequentes
@@ -75,7 +74,7 @@ function Faq() {
           <motion.dl
             className="mt-10 space-y-6 divide-y divide-white/10"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+            whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 1.5 }}
           >
             {faqs.map(faq => (
@@ -87,7 +86,7 @@ function Faq() {
                         <motion.span
                           className="text-base font-semibold leading-7"
                           initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                           transition={{ duration: 1.75 }}
                         >
                           {faq.question}
@@ -95,7 +94,7 @@ function Faq() {
                         <motion.span
                           className="ml-6 flex h-7 items-center"
                           initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Usando isVisible
+                          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                           transition={{ duration: 2 }}
                         >
                           <PlusSmallIcon
@@ -135,5 +134,5 @@ function Faq() {
   )
 }
 
-// Aplicando memo para otimizar a performance
+
 export default memo(Faq)

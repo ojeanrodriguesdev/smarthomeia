@@ -3,9 +3,8 @@
 import React, { useRef, memo } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import useOnScreen from '@/components/hooks/useOnScreen' // Importando o hook
+import useOnScreen from '@/components/hooks/useOnScreen'
 
-// Definição do array de recursos
 const features = [
   {
     name: 'Economia de Tempo',
@@ -31,7 +30,7 @@ const features = [
 
 function FeatureTwo() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const isVisible = useOnScreen({ threshold: 0.5 }) // Usando o hook para verificar visibilidade
+  const isVisible = useOnScreen({ threshold: 0.5 })
 
   return (
     <div className="bg-white py-10 sm:py-28 lg:py-32">
@@ -100,10 +99,25 @@ function FeatureTwo() {
             </dl>
           </div>
         </motion.div>
+        {/* Botões */}
+        <motion.div
+          className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.a
+            href="#"
+            className="w-auto sm:w-auto rounded-[10px] bg-green-buttonhero px-8 py-4 text-lg font-semibold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            Compre agora
+          </motion.a>
+        </motion.div>
       </div>
     </div>
   )
 }
 
-// Aplicando memo para otimizar a performance
 export default memo(FeatureTwo)
